@@ -33,8 +33,8 @@
     [else (list stmt)]))
 
 
-(define (normalize-expressions/stmt stmt)
-  (error "nothing normalized!"))
+(define (normalize stmt)
+  (error "TODO: normalization not implemented"))
 
 
 
@@ -46,7 +46,10 @@
 
 (set! prog (walk-module prog #:transform-stmt canonicalize-exceptions))
 
-(set! prog (walk-module/fix prog #:transform-stmt (compose-transform-stmt eliminate-for normalize-expressions/stmt)))
+(set! prog (walk-module/fix prog 
+  #:transform-stmt (compose-transform-stmt 
+                       eliminate-for 
+                       normalize)))
 
 (pretty-write prog)
 
