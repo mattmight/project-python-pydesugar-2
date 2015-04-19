@@ -195,7 +195,7 @@ becomes:
 
 ```
 if __debug__:
-  if <cond>:
+  if not <cond>:
     raise AssertionError()
 ```
 
