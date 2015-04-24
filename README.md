@@ -556,7 +556,7 @@ The output must conform to the following grammar:
 
 <cmpop> ::= Eq | NotEq | Lt | LtE | Gt | GtE | Is | IsNot | In | NotIn
 
-<excepthandler> ::= [except <expr> <identifier> <stmt>*]
+<excepthandler> ::= [except <aexpr> <identifier> <stmt>*]
 
 <arguments> ::= (Arguments
                    (args <arg>*)
