@@ -508,14 +508,14 @@ The output must conform to the following grammar:
 
 
 <cexpr> ::=
-
+     | <aexpr>
      | (BinOp <aexpr> <operator> <aexpr>)
      | (UnaryOp <unaryop> <aexpr>)
 
      | (Dict (keys <aexpr>*) (values <aexpr>*))
-     | (Set <expr>*)
+     | (Set <aexpr>*)
 
-     | (Yield <expr>)
+     | (Yield <aexpr>)
 
      | (Compare (left        <aexpr>) 
                 (ops         <cmpop>)
@@ -524,7 +524,7 @@ The output must conform to the following grammar:
      | (Call (func <aexpr>)
              (args <aexpr>*)
              (keywords <keyword>*)
-             (starags <aexpr?>)
+             (starargs <aexpr?>)
              (kwargs <aexpr?>))
 
      | (Str <string>)
@@ -542,8 +542,6 @@ The output must conform to the following grammar:
      | (NameConstant <name-constant>)
      | (Ellipsis)
      | (Name <identifier>)
-
-
 
 <name-constant> ::= True | False | None
 
@@ -572,13 +570,13 @@ The output must conform to the following grammar:
  
 <arg> ::= <identifier>
 
-<keyword> ::== [<identifier> <expr>]
+<keyword> ::== [<identifier> <aexpr>]
 
 <alias> ::= [<identifier> <identifier?>]
 
 <arg?> ::= <arg> | #f
 
-<expr?> ::= <expr> | #f
+<aexpr?> ::= <aexpr> | #f
 
 <int?> ::= <int> | #f
 
