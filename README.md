@@ -175,7 +175,7 @@ try:
 except BaseException as $tmp2:
   $tmp1.__exit__(type($tmp2),$tmp2,$tmp2.__traceback__)
 else:
-  $tmp1.__exit__()
+  $tmp1.__exit__(None, None, None)
 ```
 
 
