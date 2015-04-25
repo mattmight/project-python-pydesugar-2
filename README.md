@@ -472,7 +472,7 @@ The output must conform to the following grammar:
       | (Delete <cexpr>) 
 
       | (Assign (targets <cexpr>) (value <cexpr>)) 
-      | (AugAssign <aexpr> <operator> <cexpr>)  
+      | (AugAssign <cexpr> <operator> <cexpr>)  
 
       | (While (test <aexpr>) (body <stmt>*) (orelse <stmt>*))
 
