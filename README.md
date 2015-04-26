@@ -175,7 +175,7 @@ try:
 except BaseException as $tmp2:
   $tmp1.__exit__(type($tmp2),$tmp2,$tmp2.__traceback__)
 else:
-  $tmp1.__exit__()
+  $tmp1.__exit__(None, None, None)
 ```
 
 
@@ -472,7 +472,7 @@ The output must conform to the following grammar:
       | (Delete <cexpr>) 
 
       | (Assign (targets <cexpr>) (value <cexpr>)) 
-      | (AugAssign <aexpr> <operator> <cexpr>)  
+      | (AugAssign <cexpr> <operator> <cexpr>)  
 
       | (While (test <aexpr>) (body <stmt>*) (orelse <stmt>*))
 
@@ -501,7 +501,7 @@ The output must conform to the following grammar:
       ;; Added:
 
       ; Use Local to specify variables assinged here:
-      | (Local <identifier>+) 
+      | (Local <identifier>*) 
 
       ; Use Comment to specify a comment (useful in debugging):
       | (Comment <string>)
