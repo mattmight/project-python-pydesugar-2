@@ -110,7 +110,7 @@ Required transformations
 ### Canonicalize exceptions
 
 All `try`-`except` structures should have exactly one handler clause, and the
-caught exception must be `BaseException`.
+caught exception must be an atomic expression.
 
 
 In general, a schema like:
